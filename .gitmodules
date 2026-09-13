@@ -1,0 +1,3 @@
+[submodule "vendor/SlicerLive"]
+	path = vendor/SlicerLive
+	url = https://github.com/pieper/SlicerLive.git
