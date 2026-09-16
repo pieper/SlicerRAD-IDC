@@ -24,6 +24,12 @@ stays stable until someone deliberately takes an update.
   cine, invert, reset, print.
 - **Share and Download are kept** — copy an IDC-portal-style deep link, or stream the study's
   DICOM to a local folder.
+- **Full-study series panel (OHIF-style):** a left thumbnail strip lists every series in the
+  study (image stacks + SEG + SR/RTSTRUCT/…), ordered by series number, with real per-series
+  previews. Click a series to load it — this works even when you arrive by a series-level URL
+  (`SeriesInstanceUIDs`), so the whole study is always browsable.
+- **Patient/study browser links removed** — this viewer is study-scoped; the series panel is the
+  navigation surface.
 - Volume-rendering presets (Slicer/OHIF CT presets, thumbnails rendered on the fly) and the VR
   shift slider are carried forward.
 
@@ -72,5 +78,5 @@ git push                          # the deploy Action rebuilds + redeploys
 
 ## Roadmap
 
-- Full-study loading (all series in a study, series navigation) for feature parity with — and
-  beyond — OHIF on the IDC portal.
+- Instant in-place series switching (currently a reload per switch — robust and deep-linkable).
+- Per-series thumbnails for non-image objects beyond a modality placeholder.

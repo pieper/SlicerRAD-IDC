@@ -34,9 +34,10 @@
             max-width: 70vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; pointer-events: none; }
 </style>
 <script>
-  // SlicerRAD-IDC is a read-only IDC viewer: no annotation persistence yet, so the measurement
-  // tools (Distance / Angle) are turned off. bir-browser reads this global before it mounts.
-  window.__BIR_NO_MEASURE = true;
+  // Study-level IDC mode: turns off the measurement tools (no annotation persistence yet) AND
+  // hides the patient/study browser links (this viewer is study-scoped — the left series panel
+  // is the navigation). bir-browser reads this global before it mounts.
+  window.__SLICERRAD_IDC = true;
 </script>
 </head>
 <body>
