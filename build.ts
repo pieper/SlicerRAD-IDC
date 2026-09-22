@@ -32,7 +32,7 @@ await Deno.copyFile("index.html", `${OUT}/index.html`);
 // The idc_tools loader spawns a classic Web Worker resolved as ./idc-worker.js next to the
 // bundle (it importScripts dcmjs from a CDN itself), so it must sit beside bir.js in _site.
 await Deno.copyFile("vendor/SlicerLive/render/vendor/idc_tools/idc-worker.js", `${OUT}/idc-worker.js`);
-// SlicerLive favicon (index.html links favicon.svg / favicon.ico).
-await Deno.copyFile("favicon.svg", `${OUT}/favicon.svg`);
+// SlicerLive favicon (index.html links favicon.ico + apple-touch-icon.png).
 await Deno.copyFile("favicon.ico", `${OUT}/favicon.ico`);
+await Deno.copyFile("apple-touch-icon.png", `${OUT}/apple-touch-icon.png`);
 console.log(`built ${OUT}/ (bir.js + index.html + idc-worker.js + favicon)`);
