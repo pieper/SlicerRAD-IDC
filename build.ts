@@ -32,6 +32,9 @@ await Deno.copyFile("index.html", `${OUT}/index.html`);
 // The idc_tools loader spawns a classic Web Worker resolved as ./idc-worker.js next to the
 // bundle (it importScripts dcmjs from a CDN itself), so it must sit beside bir.js in _site.
 await Deno.copyFile("vendor/SlicerLive/render/vendor/idc_tools/idc-worker.js", `${OUT}/idc-worker.js`);
+// The worker importScripts ./dicom-volume.js — the shared DICOM->volume core (multi-frame /
+// 3D-ultrasound assembly) it shares with the ReMINDer worker, so it must sit beside it.
+await Deno.copyFile("vendor/SlicerLive/render/vendor/idc_tools/dicom-volume.js", `${OUT}/dicom-volume.js`);
 // SlicerLive favicon (index.html links favicon.ico + apple-touch-icon.png).
 await Deno.copyFile("favicon.ico", `${OUT}/favicon.ico`);
 await Deno.copyFile("apple-touch-icon.png", `${OUT}/apple-touch-icon.png`);
